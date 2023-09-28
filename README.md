@@ -25,7 +25,7 @@ LSTMs have three gates. Each gate is like a filter that either lets information 
 Additionally it has a cell state:
 - Cell State: the actual memory of the cell based on Forget and input gates.
 
-## Step-by-Step
+## Forward pass
 
 ### 1. Propose new candidate cell state
 
@@ -68,6 +68,14 @@ $$o_t = \sigma(U_{o}x_t + V_{o}h_{t-1} + b_{o})$$
 Finally, we have to compute the hidden state $h_t$. This will be our output for the current time step. First, we run a tanh function on the cell state. Then, we multiply it by the output $o_t$ of the output gate.
 
 $$h_t = o_t*tanh(C_t)$$
+
+### 7. Prediction
+
+The prediction is made based on the hidden state $h_t$.
+
+$$\hat{y}_t = softmax(V_{y}h_t + b_{y})$$
+
+The softmax function is used to normalize the output of the network to a probability distribution.
 
 ### Additional context
 
