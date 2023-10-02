@@ -73,7 +73,7 @@ $$h_t = o_t*tanh(C_t)$$
 
 The prediction is made based on the hidden state $h_t$.
 
-$$\hat{y}_t = softmax(V_{y}h_t + b_{y})$$
+$$\hat{y_t} = softmax(V_{y}h_t + b_{y})$$
 
 The softmax function is used to normalize the output of the network to a probability distribution.
 
