@@ -17,13 +17,16 @@ The vanishing gradient problem is when the gradient shrinks as it back-propagate
 `LSTMs` solve the vanishing gradient problem that occurs in traditional RNNs. LSTMs have a forget gate in addition to the input and output gates of traditional RNNs. The forget gate allows the LSTM to drop information that is no longer relevant to the prediction at a certain time step. This allows the LSTM to retain long-term dependencies in the data.
 Also the cell state allows the network to retain information unchanged over many time steps.
 
-LSTMs have three gates. Each gate is like a filter that either lets information through or blocks it. They are:
+LSTMs have three main gates. Each gate is like a filter that either lets information through or blocks it. They are:
 - Forget Gate: decides what information to throw away from the cell state.
 - Input Gate: decides which values from the input to update the cell state.
 - Output Gate: decides what to output based on input and the memory of the cell.
 
 Additionally it has a cell state:
 - Cell State: the actual memory of the cell based on Forget and input gates.
+
+<!-- 
+TODO: review this section, maybe the concept of the gates is not correct.
 
 ## Forward pass
 
@@ -69,7 +72,7 @@ Finally, we have to compute the hidden state $h_t$. This will be our output for 
 
 $$h_t = o_t*tanh(C_t)$$
 
-### 7. Prediction
+### 7. Prediction (final gate)
 
 The prediction is made based on the hidden state $h_t$.
 
@@ -81,4 +84,4 @@ The softmax function is used to normalize the output of the network to a probabi
 
 The variables $U$, $V$ and $b$ are the parameters of the LSTM. They are adjusted during the training process. The matrices $U$ and $V$ are the weights and they are multiplied by the input $x_t$ and the previous hidden state $h_{t-1}$ respectively. The bias vector $b$ is added to the result.
 
-
+ -->
